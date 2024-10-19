@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const dblpApiUrl = 'https://dblp.org/search/publ/api?q=author_name&format=bib&h=2';
+
+        async function fetchDblpData(event) {
+            event.preventDefault();
+            const authorName = document.getElementById("name").value;
+            const response = await fetch(dblpApiUrl.replace('author_name', authorName));
+        
+            console.log(response);
+            const bibData = await response.text();  // Assuming BIB format
+            console.log(bibData);
+            return bibData;
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="fetchDblpData(event)">
+        <label for="name">Enter text:</label>
+        <input type="text" id="name" name="name"><br/><br/>
+        <input type="submit" id="submit">
+    </form>
+</body>
+</html>
