@@ -42,64 +42,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 
-    
-    function displayAuthors(authors) {
-        const resultsDiv = document.getElementById('results');
-    
-        // Clear previous results
-        resultsDiv.innerHTML = '';
-    
-        if (authors && authors.length > 0) {
-            const limitedAuthors = authors.slice(0, 5);
-            
-            limitedAuthors.forEach(author => {
-                const authorDiv = document.createElement('div');
-                authorDiv.className = 'author';
-    
-                // Added structure for author display
-                authorDiv.innerHTML = `
-                    <div class="author-info">
-                        <a href="#" class="author-link" data-author-id="${author.author_id}">${author.name}</a>
-                        <p class="author-affiliation">${author.affiliations || 'Affiliation not provided'}</p>
-                    </div>
-                    <hr class="author-separator" />
-                `;
-    
-                resultsDiv.appendChild(authorDiv);
-            });
-    
-            const authorLinks = document.querySelectorAll('.author-link');
-            authorLinks.forEach(link => {
-                link.addEventListener('click', async (e) => {
-                    e.preventDefault();
-                    const authorId = e.target.getAttribute('data-author-id');
-    
-                    try {
-                        const response = await fetch(`http://localhost:3000/publications?author_id=${authorId}`);
-                        if (!response.ok) {
-                            const errorResponse = await response.json();
-                            console.error(`Error: ${response.status} ${errorResponse.error}`);
-                            alert(`Error fetching publications: ${errorResponse.error}`);
-                            return;
-                        }
-    
-                        const data = await response.json();
-                        displayPublications(data.articles,data.author, 1);
-                    } catch (error) {
-                        console.error('Network error:', error);
-                        alert('Network error occurred while fetching publications.');
-                    }
-                });
-            });
-    
-            resultsDiv.classList.remove('hidden');
-        } else {
-            resultsDiv.innerHTML = 'No authors found.';
-            resultsDiv.classList.remove('hidden');
-        }
-    }
-    
-
 function displayPublications(articles, author, page = 1, pageSize = 5) {
     const resultsDiv = document.getElementById('results');
     const paginationDiv = document.getElementById('pagination');
@@ -163,6 +105,64 @@ function displayPublications(articles, author, page = 1, pageSize = 5) {
         resultsDiv.classList.remove('hidden');
     }
 }
+    
+    function displayAuthors(authors) {
+        const resultsDiv = document.getElementById('results');
+    
+        // Clear previous results
+        resultsDiv.innerHTML = '';
+    
+        if (authors && authors.length > 0) {
+            const limitedAuthors = authors.slice(0, 5);
+            
+            limitedAuthors.forEach(author => {
+                const authorDiv = document.createElement('div');
+                authorDiv.className = 'author';
+    
+                // Added structure for author display
+                authorDiv.innerHTML = `
+                    <div class="author-info">
+                        <a href="#" class="author-link" data-author-id="${author.author_id}">${author.name}</a>
+                        <p class="author-affiliation">${author.affiliations || 'Affiliation not provided'}</p>
+                    </div>
+                    <hr class="author-separator" />
+                `;
+    
+                resultsDiv.appendChild(authorDiv);
+            });
+    
+            const authorLinks = document.querySelectorAll('.author-link');
+            authorLinks.forEach(link => {
+                link.addEventListener('click', async (e) => {
+                    e.preventDefault();
+                    const authorId = e.target.getAttribute('data-author-id');
+    
+                    try {
+                        const response = await fetch(`http://localhost:3000/publications?author_id=${authorId}`);
+                        if (!response.ok) {
+                            const errorResponse = await response.json();
+                            console.error(`Error: ${response.status} ${errorResponse.error}`);
+                            alert(`Error fetching publications: ${errorResponse.error}`);
+                            return;
+                        }
+    
+                        const data = await response.json();
+                        displayPublications(data.articles,data.author, 1);
+                    } catch (error) {
+                        console.error('Network error:', error);
+                        alert('Network error occurred while fetching publications.');
+                    }
+                });
+            });
+    
+            resultsDiv.classList.remove('hidden');
+        } else {
+            resultsDiv.innerHTML = 'No authors found.';
+            resultsDiv.classList.remove('hidden');
+        }
+    }
+    
+
 
 
 });
