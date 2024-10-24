@@ -26,3 +26,12 @@ Sulochana needs your help to build a JavaScript library which can be used on her
 **Team Size:** 4 
 
 **Point of Contact:** Sai Anirudh Karre (saianirudh.karre@iiit.ac.in)
+
+## Commands to execute:
+1. ```cd server``` - Enter server directory
+
+2. ```npm install``` - Install node modules
+ 
+3. ```node server.js``` -  Start the server
+
+4. open ```index.html``` file in browser
