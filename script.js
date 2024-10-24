@@ -52,7 +52,7 @@ function displayPublications(articles, author, page = 1, pageSize = 5) {
     const totalArticles = articles.length;
     const totalPages = Math.ceil(totalArticles / pageSize);
 
-    const authorHeader = document.createElement('h3');
+    const authorHeader = document.createElement('h1');
     authorHeader.textContent = `${author.name} Publications`;
     resultsDiv.appendChild(authorHeader);
 
