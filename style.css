@@ -45,11 +45,18 @@ button:hover {
 
 .year-box {
     border: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: 20px;
     padding: 20px;
     margin-bottom: 15px;
     background-color: #f9f9f9;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.year-box:hover {
+    transform: translateY(-10px); /* Moves the box upward */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Creates a shadow to give depth */
+}
+
 
 .publication {
     margin: 10px 0;
@@ -129,9 +136,11 @@ a:hover {
     text-decoration: underline;
 }
 
-h3 {
+h1 {
     text-align: center;
     margin: 20px 0;
+    color: green;
+    font-family: 'Roboto';
 }
 
 .publication {
@@ -140,4 +149,22 @@ h3 {
 
 .publication strong {
     display: block;
+}
+#buffer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 8px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 8px solid #3498db;
+    animation: spin 1s linear infinite;
+    z-index: 9999;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
