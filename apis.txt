@@ -1,0 +1,2 @@
+https://serpapi.com/search.json?engine=google_scholar_profiles&mauthors=P KRISHNA REDDY
+https://serpapi.com/search.json?engine=google_scholar_author&author_id=XIgl8kUAAAAJ
