@@ -145,7 +145,7 @@ function displayPublications(articles, author, page = 1, pageSize = 5) {
             resultsDiv.appendChild(yearDiv);
         }
 
-        // Add pagination links
+        // Add pagination 
         for (let i = 1; i <= totalPages; i++){
             const pageLink = document.createElement('span');
             pageLink.className = 'page-link';
