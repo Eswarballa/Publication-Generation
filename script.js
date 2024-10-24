@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         try {
             if (searchType === 'name') {
-                // Search by author name
+                // Search by author
                 const response = await fetch(`http://localhost:3000/api/search?author_name=${encodeURIComponent(searchInput)}`);
                 if (!response.ok) {
                     const errorResponse = await response.json();
