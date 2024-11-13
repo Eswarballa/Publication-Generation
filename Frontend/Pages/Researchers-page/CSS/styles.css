@@ -1,1 +1,164 @@
+.researcher-profile {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
 
+.profile-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.profile-intro h1 {
+    font-size: 2.5rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+}
+
+.profile-intro p {
+    color: #666;
+    margin: 0.25rem 0;
+}
+
+.designation {
+    font-size: 1.25rem;
+    color: #2563eb;
+}
+
+.profile-links {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    background: #f3f4f6;
+    color: #1a1a1a;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.social-link:hover {
+    background: #e5e7eb;
+}
+
+.profile-content section {
+    margin-bottom: 3rem;
+}
+
+.profile-content h2 {
+    color: #1a1a1a;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.interests-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.interests-list li {
+    background: #f3f4f6;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    color: #666;
+}
+
+/* RepoSync Container Customization */
+#reposync-container {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: rgb(215, 213, 213);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.hidden {
+    display: none;
+}
+.publications-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.publication {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.publication h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.publication p {
+    margin: 8px 0;
+    font-size: 0.95em;
+    color: #555;
+}
+
+.publication a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.publication a:hover {
+    text-decoration: underline;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    margin: 0 5px;
+    padding: 8px 12px;
+    background-color: #060707;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+.pagination button:hover{
+    background: #323233;
+}
+.pagination button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+/* Circular Buffering CSS */
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #000000;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
