@@ -276,7 +276,72 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const searchButton = document.getElementById('searchButton');
+    const searchTypeSelect = document.getElementById('facultyFilter');
+    const searchInput = document.getElementById('yearFilter');
+    const reposyncContainer = document.getElementById('reposync-container');
 
+    // Only add event listener if all elements exist
+    if (searchButton && searchTypeSelect && searchInput && reposyncContainer) {
+        searchButton.addEventListener('click', async () => {
+            const searchType = searchTypeSelect.value;
+            const searchTerm = searchInput.value.trim();
+
+            // Clear previous results
+            reposyncContainer.innerHTML = '';
+
+            if (searchTerm === '') {
+                alert("Please enter a search term.");
+                return;
+            }
+
+            try {
+                if (searchType === 'name') {
+                    // Search by author name
+                    const response = await fetch(`http://localhost:3001/api/search?author_name=${encodeURIComponent(searchTerm)}`);
+                    
+                    if (!response.ok) {
+                        const errorResponse = await response.json();
+                        console.error(`Error: ${response.status} ${errorResponse.error}`);
+                        alert(`Error: ${errorResponse.error}`);
+                        return;
+                    }
+
+                    const data = await response.json();
+                    displayAuthors(data.profiles);
+
+                } else if (searchType === 'id') {
+                    // Redirect to researcher page with author ID
+                    window.location.href = `../researcher-page/index.html?author_id=${encodeURIComponent(searchTerm)}`;
+                }
+
+            } catch (error) {
+                console.error(error.message);
+                alert(`An error occurred: ${error.message}`);
+            }
+        });
+    }
+
+    // Function to display authors in reposyncContainer
+    function displayAuthors(authors) {
+        if (authors && authors.length > 0) {
+            reposyncContainer.innerHTML = ''; // Clear previous results
+
+            authors.forEach(author => {
+                const authorDiv = document.createElement('div');
+                authorDiv.className = 'author';
+                authorDiv.innerHTML = `
+                    <p><strong><a href="../Researchers-page/index.html?author_id=${encodeURIComponent(author.author_id)}">${author.name}</a></strong></p>
+                    <p>${author.affiliations || ''}</p>
+                `;
+                reposyncContainer.appendChild(authorDiv);
+            });
+        } else {
+            reposyncContainer.innerHTML = '<p>No authors found.</p>';
+        }
+    }
+});
 
 // document.addEventListener("DOMContentLoaded", function() {
 //     // Get references to HTML elements
