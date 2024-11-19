@@ -65,49 +65,34 @@ document.addEventListener('DOMContentLoaded', () => {
             hideLoader();
         }
     }
-
     function setupPagination(paginationData) {
         const prevButton = document.getElementById('prev-page');
         const nextButton = document.getElementById('next-page');
-
-        // Disable buttons by default if no pagination data is available
-        if (!paginationData) {
+    
+         if (!paginationData) {
             prevButton.disabled = true;
             nextButton.disabled = true;
             return;
         }
-
-        function convertToLocalUrl(serpApiUrl) {
-            if (!serpApiUrl) return null;
-            const url = new URL(serpApiUrl);
-            return `http://localhost:3001/publications?${url.searchParams.toString()}`;
-        }
-
-        // Configure previous button
+    
         if (paginationData.previous) {
             prevButton.disabled = false;
-            const prevUrl = convertToLocalUrl(paginationData.previous);
             prevButton.onclick = () => {
-                console.log('Fetching previous page:', prevUrl);
-                fetchAuthorDetails(prevUrl);
+                fetchAuthorDetails(`http://localhost:3001/publications?next_url=${encodeURIComponent(paginationData.previous)}`);
             };
         } else {
             prevButton.disabled = true;
         }
-
-        // Configure next button
-        if (paginationData.next) {
+    
+         if (paginationData.next) {
             nextButton.disabled = false;
-            const nextUrl = convertToLocalUrl(paginationData.next);
             nextButton.onclick = () => {
-                console.log('Fetching next page:', nextUrl);
-                fetchAuthorDetails(nextUrl);
+                fetchAuthorDetails(`http://localhost:3001/publications?next_url=${encodeURIComponent(paginationData.next)}`);
             };
         } else {
             nextButton.disabled = true;
         }
     }
-
     function showLoader() {
         loader.style.display = 'block';
         contentSections.forEach(section => section.style.display = 'none');
