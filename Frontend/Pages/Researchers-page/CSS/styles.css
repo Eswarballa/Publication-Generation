@@ -143,7 +143,7 @@
     background-color: #cccccc;
     cursor: not-allowed;
 }
-/* Circular Buffering CSS */
+
 .loader {
     border: 8px solid #f3f3f3;
     border-top: 8px solid #000000;
@@ -161,4 +161,221 @@
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+#dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+#dropdown-menu button {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border: none;
+    background: none;
+    text-align: left;
+    width: 100%;
+}
+
+#dropdown-menu button:hover {
+    background-color: #ddd;
+}
+
+#group-button {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.publications-section {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.group-options {
+    margin-bottom: 10px;
+}
+
+#reposync-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.year-section {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.year-section h3 {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.publication {
+    margin-bottom: 10px;
+}
+
+.publication h4 {
+    margin: 0 0 5px;
+    font-size: 1em;
+    color: #007BFF;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 10px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.group-options {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}
+
+.group-options label {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-right: 10px;
+    color: #333;
+}
+
+.group-options select {
+    padding: 8px 12px;
+    font-size: 1rem;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.group-options select:hover {
+    border-color: #999;
+    background-color: #f0f0f0;
+}
+
+.group-options select:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: #fff;
+}
+
+.group-options select {
+    min-width: 150px;
+}
+
+@media (max-width: 768px) {
+    .group-options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .group-options label {
+        margin-bottom: 8px;
+    }
+}
+
+/* Visit My Website link */
+.website-link {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.website-link:hover {
+    background-color: #007bff;
+    text-decoration: none;
+}
+
+/* Google Scholar button */
+.google-scholar-button {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.google-scholar-button i {
+    margin-right: 5px;
+}
+
+.google-scholar-button:hover {
+    background-color: #007bff;
+    text-decoration: none;
+}
+
+.citation-details {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.citation-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.citation-row div {
+    flex: 1;
+}
+
+.about-section a {
+    display: block;
+    margin-top: 20px;
+    margin-left: 20px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
 }
