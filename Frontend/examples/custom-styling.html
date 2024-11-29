@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RepoSync Plugin - Custom Styling</title>
+    
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="assets/reposync.min.css">
+    
+    <!-- Custom styles -->
+    <style>
+        /* Page styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #f0f4f8;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Custom plugin styles */
+        .custom-theme {
+            --primary: #667eea;
+            --secondary: #764ba2;
+            --background: #ffffff;
+            --text: #2d3748;
+            --border: #e2e8f0;
+        }
+        
+        /* Override plugin default styles */
+        .custom-theme .reposync-wrapper {
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            background: var(--background);
+        }
+        
+        .custom-theme .search-input {
+            border-radius: 25px;
+            padding: 12px 20px;
+            border: 2px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .custom-theme .search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+            outline: none;
+        }
+        
+        .custom-theme .search-button {
+            border-radius: 25px;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .custom-theme .search-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+        
+        .custom-theme .publication-item {
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .custom-theme .publication-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>RepoSync Plugin - Custom Styling</h1>
+        <p>This example demonstrates how to customize the plugin's appearance.</p>
+    </div>
+
+    <div class="container">
+        <!-- Plugin with custom styling -->
+        <div id="reposync-custom" class="custom-theme"></div>
+    </div>
+
+    <!-- Plugin Script -->
+    <script src="assets/reposync.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const repoSync = new RepoSync({
+                container: '#reposync-custom',
+                apiUrl: 'http://localhost:3001',
+                theme: 'custom'
+            });
+        });
+    </script>
+</body>
+</html>

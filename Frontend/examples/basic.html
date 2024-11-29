@@ -1,1 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RepoSync Plugin - Basic Integration</title>
+    
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="assets/reposync.min.css">
+    
+    <!-- Basic page styles -->
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f7fa;
+        }
+        
+        .example-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+            color: white;
+            border-radius: 12px;
+        }
+        
+        .docs-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        code {
+            background: #e0e0e0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
 
+        #reposync-basic {
+            margin-top: 2rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="example-header">
+        <h1>RepoSync Plugin - Basic Integration</h1>
+        <p>This example shows the simplest way to integrate the RepoSync plugin into any webpage.</p>
+    </div>
+
+    <div class="docs-section">
+        <h2>Integration Steps</h2>
+        <ol>
+            <li>Include the CSS file in your head section</li>
+            <li>Add a container div where you want the plugin to appear</li>
+            <li>Include the JavaScript file</li>
+            <li>Initialize the plugin with basic configuration</li>
+        </ol>
+    </div>
+
+    <!-- Plugin Container -->
+    <div id="reposync-basic"></div>
+
+    <!-- Plugin Script -->
+    <script src="assets/reposync.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize with basic configuration
+            const repoSync = new RepoSync({
+                container: '#reposync-basic',
+                apiUrl: 'http://localhost:3001',
+                theme: 'light',
+                itemsPerPage: 10
+            });
+        });
+    </script>
+</body>
+</html>
