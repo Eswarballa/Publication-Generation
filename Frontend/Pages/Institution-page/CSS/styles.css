@@ -88,12 +88,18 @@ button:hover {
 .hidden {
     display: none;
 }
-#reposync-container .author {
+.author {
     margin-bottom: 10px;
     padding: 10px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.author:hover {
+    transform: translateY(-5px); /* Moves the box upward */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
 }
 
 /* Adding line break between names and padding */
@@ -114,4 +120,33 @@ button:hover {
 }
 #affiliations{
     font-size: 5px;
+}
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Adjust based on your design */
+}
+
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #000000;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
