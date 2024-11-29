@@ -4,6 +4,32 @@
     padding: 2rem;
 }
 
+.redirection {
+    position: fixed;
+    top: 20px;       
+    right: 20px;    
+}
+
+#prevpage {
+    background-color: #0f1011; 
+    color: white;               
+    border-radius: 8px;        
+    padding: 10px 20px;        
+    font-size: 16px;          
+    text-align: center;        
+    text-decoration: none;     
+    display: inline-block;     
+}
+#prevpage:hover {
+    background-color: #3c3c3d;     
+    cursor: pointer;          
+}
+
+#prevpage a {
+    text-decoration: none;   
+    color: inherit;          
+}
+
 .profile-header {
     margin-bottom: 3rem;
     padding-bottom: 2rem;
@@ -96,12 +122,19 @@
     background-color: #ffffff;
     margin-bottom: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
+.publication:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
 
 .publication h3 {
     margin: 0;
     font-size: 1.2em;
-    color: #333;
+    color: #2b2a2a;
 }
 
 .publication p {
@@ -111,7 +144,7 @@
 }
 
 .publication a {
-    color: #007bff;
+    color: #089de3;
     text-decoration: none;
     font-weight: bold;
 }
@@ -120,29 +153,7 @@
     text-decoration: underline;
 }
 
-.pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
 
-.pagination button {
-    margin: 0 5px;
-    padding: 8px 12px;
-    background-color: #060707;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
-.pagination button:hover{
-    background: #323233;
-}
-.pagination button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
-}
 
 .loader {
     border: 8px solid #f3f3f3;
@@ -231,8 +242,8 @@
 
 .publication h4 {
     margin: 0 0 5px;
-    font-size: 1em;
-    color: #007BFF;
+    font-size: 20px;
+    color: #070708;
 }
 
 .pagination {
@@ -244,7 +255,7 @@
 .pagination button {
     padding: 10px;
     border: none;
-    background-color: #007BFF;
+    background-color: #1c1d1f;
     color: white;
     cursor: pointer;
     border-radius: 3px;
@@ -378,4 +389,60 @@
     text-decoration: none;
     color: #007bff;
     font-weight: bold;
+}
+
+.citation-table {
+
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1em;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.citation-table th,
+.citation-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.citation-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    text-align: center;
+}
+
+.citation-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.filter-by-year {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-by-year label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.filter-by-year select {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 180px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.filter-by-year select:focus {
+    border-color: #007BFF;
+    outline: none;
 }
