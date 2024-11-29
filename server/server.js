@@ -45,13 +45,12 @@ app.get('/publications', async (req, res) => {
     const params = {
         engine: 'google_scholar_author',
         api_key: SERPAPI_KEY,
+        author_id: author_id || '', 
     };
 
-    // Use `next_url` if provided, otherwise fallback to initial request
+   
     if (next_url) {
         requestUrl = next_url;
-    } else {
-        params.author_id = author_id;
     }
 
     console.log(`Fetching publications. URL: ${requestUrl}, Params:`, params);
