@@ -88,4 +88,9 @@ Google Scholar's API response includes a link for fetching the next set of publi
 
 ## Author Information
 
-This project was developed by a dedicated team to assist researchers in organizing and presenting their academic contributions efficiently.
+- Eswar Chandra Balla
+- Kondru Karan Reddy
+- Chandana Pappula
+- Shreya Koka
+- Ganesh Shukla
+
