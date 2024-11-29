@@ -32,10 +32,11 @@ The JavaScript library is modular, enabling easy integration into external websi
 
 1. Clone the project repository to your local machine.
 2. Navigate to the server directory and install the required Node.js modules.
-3. Start the server by running `node server.js`.
-4. Navigate to the frontend directory and run the application.
-5. Open the `index.html` file in your browser or host it using a local server.
-6. You’re now ready to fetch author publications!
+3. Add your "SERPAPI_KEY"
+4. Start the server by running `node server.js`.
+5. Navigate to the frontend directory and run the application.
+6. Open the `index.html` file in your browser or host it using a local server.
+7. You’re now ready to fetch author publications!
 
 ## APIs Used
 
