@@ -31,7 +31,7 @@ The JavaScript library is modular, enabling easy integration into external websi
 ## How to Run
 
 1. Clone the project repository to your local machine.
-2. Navigate to the server directory and install the required Node.js modules.
+2. Navigate to the server directory and install the required Node.js modules using the command `npm install` in server directory.
 3. Add your "SERPAPI_KEY"
 4. Start the server by running `node server.js`.
 5. Navigate to the frontend directory and run the application.
