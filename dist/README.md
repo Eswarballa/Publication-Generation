@@ -38,80 +38,74 @@ To get started with RepoSync, follow these steps:
 
 3. **Initialize the RepoSync Plugin**: In your website's JavaScript file or within a `<script>` tag at the bottom of the HTML file (after the necessary HTML structure and CSS/JS includes have been set up), create an instance of the `RepoSync` class and configure it according to your needs.
 
-   ```javascript
-   new RepoSync({
-     container: "#reposync",
-     apiUrl: "http://your-api-endpoint.com",
-     theme: "dark",
-     itemsPerPage: 15,
-     features: ["search", "filter"],
-   });
+```    <!-- Container for publications -->
+    <div id="reposync"></div>
+
+    <!-- Add the script with full path -->
+    <script src="X:/home/gshukla/Project/Project/dist/reposync.min.js"></script>
+    
+    <script>
+        // Add error handling for script loading
+        window.addEventListener('load', function() {
+            if (typeof RepoSync === 'undefined') {
+                console.error('RepoSync script failed to load');
+                document.getElementById('reposync').innerHTML = 
+                    'Error: RepoSync plugin failed to load. Please check the console for details.';
+                return;
+            }
+
+            try {
+                new RepoSync({
+                    scholarId: "ds5hIzoAAAAJ",
+                    title: "Dr. Sai Anirudh Karre - Publications"
+                });
+            } catch (error) {
+                console.error('Error initializing RepoSync:', error);
+                document.getElementById('reposync').innerHTML = 
+                    'Error: Failed to initialize RepoSync. Please check the console for details.';
+            }
+        });
+    </script>```
+
+Here's an example of where the initialization code would go in your HTML file:
+
+   ```<!DOCTYPE html>
+<html>
+<head>
+    <title>Publications</title>
+</head>
+<body>
+    <!-- Container for publications -->
+    <div id="reposync"></div>
+
+    <!-- Add the script with full path -->
+    <script src="X:/home/gshukla/Project/Project/dist/reposync.min.js"></script>
+    
+    <script>
+        // Add error handling for script loading
+        window.addEventListener('load', function() {
+            if (typeof RepoSync === 'undefined') {
+                console.error('RepoSync script failed to load');
+                document.getElementById('reposync').innerHTML = 
+                    'Error: RepoSync plugin failed to load. Please check the console for details.';
+                return;
+            }
+
+            try {
+                new RepoSync({
+                    scholarId: "ds5hIzoAAAAJ",
+                    title: "Dr. Sai Anirudh Karre - Publications"
+                });
+            } catch (error) {
+                console.error('Error initializing RepoSync:', error);
+                document.getElementById('reposync').innerHTML = 
+                    'Error: Failed to initialize RepoSync. Please check the console for details.';
+            }
+        });
+    </script>
+</body>
+</html>
    ```
-
-   Here's an example of where the initialization code would go in your HTML file:
-
-   ```html
-   <!DOCTYPE html>
-   <html>
-     <head>
-       <title>RepoSync Plugin Example</title>
-       <link rel="stylesheet" href="reposync.min.css" />
-     </head>
-     <body>
-       <!-- HTML structure with the container element -->
-       <div id="reposync"></div>
-
-       <!-- Include the RepoSync JavaScript file -->
-       <script src="reposync.min.js"></script>
-
-       <script>
-         // Initialize the RepoSync plugin
-         new RepoSync({
-           container: "#reposync",
-           apiUrl: "http://your-api-endpoint.com",
-           theme: "dark",
-           itemsPerPage: 15,
-           features: ["search", "filter"],
-         });
-       </script>
-     </body>
-   </html>
-   ```
-
-   Alternatively, you can place the initialization code in a separate JavaScript file and include that file at the bottom of your HTML structure:
-
-   ```html
-   <!DOCTYPE html>
-   <html>
-     <head>
-       <title>RepoSync Plugin Example</title>
-       <link rel="stylesheet" href="reposync.min.css" />
-     </head>
-     <body>
-       <!-- HTML structure with the container element -->
-       <div id="reposync"></div>
-
-       <!-- Include the RepoSync JavaScript file -->
-       <script src="reposync.min.js"></script>
-
-       <!-- Include the file with the RepoSync initialization -->
-       <script src="app.js"></script>
-     </body>
-   </html>
-   ```
-
-   And in the `app.js` file:
-
-   ```javascript
-   new RepoSync({
-     container: "#reposync",
-     apiUrl: "http://your-api-endpoint.com",
-     theme: "dark",
-     itemsPerPage: 15,
-     features: ["search", "filter"],
-   });
-   ```
-
    The key is to ensure that the RepoSync JavaScript file is included before the initialization code, so that the `RepoSync` class is available to be instantiated.
 
 4. **Customize the Appearance (Optional)**: Modify the plugin's CSS to align with your website's design.
