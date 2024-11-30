@@ -38,7 +38,7 @@ To get started with RepoSync, follow these steps:
 
 3. **Initialize the RepoSync Plugin**: In your website's JavaScript file or within a `<script>` tag at the bottom of the HTML file (after the necessary HTML structure and CSS/JS includes have been set up), create an instance of the `RepoSync` class and configure it according to your needs.
 
-```    <!-- Container for publications -->
+```                        <!-- Container for publications -->
     <div id="reposync"></div>
 
     <!-- Add the script with full path -->
@@ -56,8 +56,8 @@ To get started with RepoSync, follow these steps:
 
             try {
                 new RepoSync({
-                    scholarId: "ds5hIzoAAAAJ",
-                    title: "Dr. Sai Anirudh Karre - Publications"
+                    scholarId: "S-J_ItYAAAAJ",
+                    // title: "Dr. Mark Billinghurst Publications"
                 });
             } catch (error) {
                 console.error('Error initializing RepoSync:', error);
